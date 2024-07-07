@@ -57,8 +57,8 @@ ui <- page_navbar(
       card_body(
         markdown(
           mds = c(
-            "Welcome to the companion app of [REF].  ",
-            "This app lets you filter and download of the meta-analytic dataset to the subset of your interest among the 285 included samples.",
+            "Welcome to the companion app of Drexl, K., Ralisa, V., Rosselet-Amoussou, J., Wen, C.K.F., Urben, S., Plessen, K.J., and Glaus, J. (under review). *Readdressing the ongoing challenge of missing data in youth Ecological Momentary Assessment studies: A meta-analysis update.*",
+            "<br>This app lets you filter and download of the meta-analytic dataset to the subset of your interest among the 285 included samples.",
             "Additionally, you can select and visualize variable pairs based on the filtered dataset.",
             "For open data and code, please visit <a href=\"https://osf.io/8nkeu/?view_only=f87987d1419d4b3b9f2b6499a3686460\">our OSF repository</a>."
           )
