@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you used this app or refer to it, please cite it as below."
+authors:
+- family-names: "Drexl"
+  given-names: "Konstantin"
+  orcid: "https://orcid.org/0000-0001-9023-9629"
+title: "Youth Ecological Momentary Assessment Meta-Analysis (YEMAMA) Update. Shiny app."
+version: 0.1.3
+doi: "10.5281/zenodo.14957329"
+date-released: 2025-03-02
+url: "https://github.com/nopsybot/yemama-app https://kdrexl.shinyapps.io/yemama-app/"

@@ -5,6 +5,6 @@ account: kdrexl
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12285317
-bundleId: 8834222
+bundleId: 8835234
 url: https://kdrexl.shinyapps.io/yemama-app/
 version: 1

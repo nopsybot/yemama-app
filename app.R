@@ -37,11 +37,14 @@ initial_df <- readRDS("Drexl2024_yemama_processed.rds") %>%
   )
 
 ui <- page_navbar(
-  title = div(
+  title = tagList(
     "Youth EMA Meta-Analysis (YEMAMA) Update",
-    tags$a(href="https://github.com/nopsybot/yemama-app", target="_blank",
-           tags$img(src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png", 
-                    height="30px", style="position:absolute;top:10px;right:10px;"))
+    tags$a(
+      href = "https://github.com/your_repo",  # replace with your GitHub repo URL
+      target = "_blank",
+      icon("github"), 
+      style = "color: white; margin-left: 10px;"
+    )
   ),
   selected = "Filter",
   collapsible = TRUE,
@@ -53,46 +56,36 @@ ui <- page_navbar(
     title = "Filter",
     grid_container(
       layout = c("description","table"),
-      row_sizes = c(
-        "200px",
-        "1fr"
-      ),
-    grid_card(
-      area = "description",
-      card_body(
-        markdown(
-          mds = c(
-            "Welcome to the companion app of Drexl, K., Ralisa, V., Rosselet-Amoussou, J., Wen, C.K.F., Urben, S., Plessen, K.J., and Glaus, J. (2025). Readdressing the ongoing challenge of missing data in youth Ecological Momentary Assessment studies: A meta-analysis update. <i>Journal of Medical Internet Research</i>. doi: <a href=\"https://doi.org/10.2196/10.2196/65710\">10.2196/65710</a>",
-            "<br>This app lets you filter and download of the meta-analytic dataset to the subset of your interest among the 285 included samples.",
-            "Additionally, you can select and visualize variable pairs based on the filtered dataset.",
-            "For open data and code, please visit <a href=\"https://osf.io/8nkeu/\">our OSF repository</a>."
+      row_sizes = c("150px", "1fr"),
+      grid_card(
+        area = "description",
+        card_body(
+          markdown(
+            mds = c(
+              "Welcome to the companion app of Drexl, K., Ralisa, V., Rosselet-Amoussou, J., Wen, C.K.F., Urben, S., Plessen, K.J., and Glaus, J. (2025). <strong>Readdressing the ongoing challenge of missing data in youth Ecological Momentary Assessment studies: A meta-analysis update.</strong> <i>Journal of Medical Internet Research</i>. doi: <a href=\"https://doi.org/10.2196/10.2196/65710\">10.2196/65710</a>",
+              "<br><br>This app lets you filter and download of the meta-analytic dataset to the subset of your interest among the 285 included samples.",
+              "Additionally, you can select and visualize variable pairs based on the filtered dataset.",
+              "For open data and code, please visit <a href=\"https://osf.io/8nkeu/\">our OSF repository</a>."
+            )
           )
         )
+      ),
+      grid_card(
+        area = "table",
+        card_body(
+          gap = "0px",
+          div(DTOutput("table"), width = "100%", style = "font-size:8pt")
+        )
       )
-    ),
-    grid_card(
-      area = "table",
-      card_body(
-        gap = "0px",
-        div(DTOutput("table"), width = "100%", style = "font-size:8pt")
-      )
-    )
     )
   ),
   nav_panel(
     "Plot",
     grid_container(
-      row_sizes = c(
-        "1fr"
-      ),
-      col_sizes = c(
-        "250px",
-        "1fr"
-      ),
+      row_sizes = c("1fr"),
+      col_sizes = c("250px", "1fr"),
       gap_size = "10px",
-      layout = c(
-        "plot_ui plot"
-      ),
+      layout = c("plot_ui plot"),
       grid_card(
         area = "plot_ui",
         card_header("Plot"),
@@ -101,16 +94,6 @@ ui <- page_navbar(
           selectizeInput("x_var", "X-Axis", choices = NULL),
           selectizeInput("y_var", "Y-Axis", choices = NULL),
           selectizeInput("col_var", "Color", choices = NULL)
-          
-          # radioButtons(
-          #   inputId = "suppl_layer_choice",
-          #   label = "Layers",
-          #   choices = list(
-          #     "only plain data" = "none",
-          #     "descriptive summary" = "desc",
-          #     "meta-analytic synthesis" = "meta"
-          #   )
-          # )
         )
       ),
       grid_card(
@@ -120,6 +103,7 @@ ui <- page_navbar(
     )
   )
 )
+
 
 
 server <- function(input, output, session) {
