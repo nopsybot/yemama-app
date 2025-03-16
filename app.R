@@ -37,7 +37,12 @@ initial_df <- readRDS("Drexl2024_yemama_processed.rds") %>%
   )
 
 ui <- page_navbar(
-  title = "Youth EMA Meta-Analysis (YEMAMA) Update",
+  title = div(
+    "Youth EMA Meta-Analysis (YEMAMA) Update",
+    tags$a(href="https://github.com/nopsybot/yemama-app", target="_blank",
+           tags$img(src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png", 
+                    height="30px", style="position:absolute;top:10px;right:10px;"))
+  ),
   selected = "Filter",
   collapsible = TRUE,
   theme = bslib::bs_theme(
