@@ -62,7 +62,7 @@ ui <- page_navbar(
         card_body(
           markdown(
             mds = c(
-              "Welcome to the companion app of Drexl, K., Ralisa, V., Rosselet-Amoussou, J., Wen, C.K.F., Urben, S., Plessen, K.J., and Glaus, J. (2025). <strong>Readdressing the ongoing challenge of missing data in youth Ecological Momentary Assessment studies: A meta-analysis update.</strong> <i>Journal of Medical Internet Research</i>. doi: <a href=\"https://doi.org/10.2196/65710\">10.2196/65710</a>",
+              "Welcome to the companion app of Drexl, K., Ralisa, V., Rosselet-Amoussou, J., Wen, C.K., Urben, S., Plessen, K.J., and Glaus, J. (2025). <strong>Readdressing the ongoing challenge of missing data in youth Ecological Momentary Assessment studies: Meta-analysis update.</strong> <i>Journal of Medical Internet Research</i>. doi: <a href=\"https://doi.org/10.2196/65710\">10.2196/65710</a>",
               "<br><br>This app lets you filter and download of the meta-analytic dataset to the subset of your interest among the 285 included samples.",
               "Additionally, you can select and visualize variable pairs based on the filtered dataset.",
               "For open data and code, please visit <a href=\"https://osf.io/8nkeu/\">our OSF repository</a>."
